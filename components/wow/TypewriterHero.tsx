@@ -32,16 +32,16 @@ export default function TypewriterHero() {
         const t = setTimeout(() => {
           charIdx.current++;
           setDisplayed(phrase.slice(0, charIdx.current));
-        }, 70);
+        }, 60);
         return () => clearTimeout(t);
       } else {
-        const t = setTimeout(() => setPhase("pausing"), 1800);
+        const t = setTimeout(() => setPhase("pausing"), 300);
         return () => clearTimeout(t);
       }
     }
 
     if (phase === "pausing") {
-      const t = setTimeout(() => setPhase("deleting"), 300);
+      const t = setTimeout(() => setPhase("deleting"), 777);
       return () => clearTimeout(t);
     }
 
@@ -50,7 +50,7 @@ export default function TypewriterHero() {
         const t = setTimeout(() => {
           charIdx.current--;
           setDisplayed(phrase.slice(0, charIdx.current));
-        }, 38);
+        }, 60);
         return () => clearTimeout(t);
       } else {
         phraseIdx.current = (phraseIdx.current + 1) % PHRASES.length;
@@ -67,7 +67,6 @@ export default function TypewriterHero() {
       <span className="text-sky">programacion </span>
       </div>
       <span className="block">
-        {/* <span className="text-sky">Construye&nbsp;</span> */}
         <span>{displayed}</span>
         <span className="typewriter-cursor" aria-hidden />
       </span>
