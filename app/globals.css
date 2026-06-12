@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ════════════════════════════════════════════════════════════════
+   ÉXODOTECH — v2 CSS Custom Properties
+   Fondo off-white cálido (#F5F4F0) — no deslumbrante, contraste limpio
+   ════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    /* Off-white cálido — no #FAFAFA puro, sino #F5F4F0 con tinte cálido */
+    --background:          40 10% 96%;      /* #F5F4F0 */
+    --foreground:          230 18% 22%;     /* #2D3142 carbon */
+
+    /* Superficie secundaria — ash cálido */
+    --card:                40 8% 90%;       /* #E4E2DB */
+    --card-foreground:     230 18% 22%;
+
+    --popover:             40 10% 96%;
+    --popover-foreground:  230 18% 22%;
+
+    /* Superficies elevadas (cards con border) */
+    --elevated:            0 0% 100%;       /* blanco puro para cards */
+
+    --primary:             230 18% 22%;
+    --primary-foreground:  40 10% 96%;
+
+    --secondary:           40 8% 90%;
+    --secondary-foreground: 230 18% 22%;
+
+    --muted:               40 8% 90%;
+    --muted-foreground:    230 10% 50%;
+
+    --accent:              205 36% 45%;     /* sky #4A7C9D — solo CTAs */
+    --accent-foreground:   0 0% 100%;
+
+    --destructive:         0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border:              230 10% 88%;
+    --input:               230 10% 88%;
+    --ring:                205 36% 45%;
+
+    --radius:              0.5rem;
+  }
+
+  * { @apply border-border; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 { @apply font-display text-foreground; }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #F5F4F0; }
+  ::-webkit-scrollbar-thumb { background: #C8C6BF; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #A8A6A0; }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   WOW — Typewriter effect
+   El contenedor tiene altura fija para que no salte el layout.
+   ──────────────────────────────────────────────────────────────── */
+.typewriter-container {
+  min-height: 4.5rem; /* Reserva espacio fijo — no redimensiona */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: hsl(var(--accent));
+  margin-left: 2px;
+  vertical-align: baseline;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Prose overrides for Materia viewer
+   ──────────────────────────────────────────────────────────────── */
+.prose-exodo {
+  --tw-prose-body:        #2D3142;
+  --tw-prose-headings:    #2D3142;
+  --tw-prose-lead:        #4B5563;
+  --tw-prose-links:       #4A7C9D;
+  --tw-prose-code:        #2D3142;
+  --tw-prose-pre-bg:      #ECEAE4;
+  --tw-prose-pre-code:    #2D3142;
+  --tw-prose-hr:          #D8D6CF;
+  --tw-prose-quotes:      #4A7C9D;
+  --tw-prose-quote-borders: #4A7C9D;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Sidebar links
+   ──────────────────────────────────────────────────────────────── */
+.sidebar-link {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-md text-sm font-medium
+         text-carbon/55 transition-all duration-150;
+}
+.sidebar-link:hover,
+.sidebar-link.active {
+  @apply bg-surface text-carbon;
+}
+.sidebar-link.active {
+  @apply text-sky;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Section reveal animation
+   ──────────────────────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.reveal.in-view {
+  animation: fade-up 0.55s ease-out forwards;
+}
