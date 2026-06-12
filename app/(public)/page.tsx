@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────────────────── */}
-      <section className="pt-24 pb-16">
+      <section className="pt-24 pb-16 bg-surface">
         <div className="container mx-auto px-6 max-w-5xl">
           <p className="font-mono text-xs text-sky tracking-widest uppercase mb-6">
             Escuela de programación · Cuenca, Ecuador

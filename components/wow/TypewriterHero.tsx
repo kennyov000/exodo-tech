@@ -6,7 +6,7 @@ const PHRASES = [
   "es el lenguaje del futuro.",
   "es el lenguaje del presente.",
   "es el lenguaje del ahora.",
-  "*******************",
+  "**********",
 ];
 
 /**
@@ -61,7 +61,7 @@ export default function TypewriterHero() {
   }, [displayed, phase]);
 
   return (
-    <h1 className="font-display font-bold text-display-2xl text-carbon typewriter-container">
+    <h1 className="font-display font-bold text-display-2xl text-carbon typewriter-container bg-surface">
       <div className="block">
       <span>La </span>
       <span className="text-sky">programacion </span>
