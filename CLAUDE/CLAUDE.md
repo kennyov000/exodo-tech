@@ -302,6 +302,10 @@ Ayudar a analizar, entender y construir features del frontend de éxodotech de f
 - Explicado en pasos o bullets
 - Enfocado en explicación, arquitectura y decisiones de diseño
 
+# Las convenciones no son dogma
+
+Documentar cómo está hecho el código hoy no es lo mismo que decir que así debe seguir. Las convenciones de este archivo y los patrones acumulados en `KNOWLEDGE/` son un registro de las decisiones tomadas hasta ahora, no un estándar fijo a defender. Si en una misión encontrás un patrón mejorable — arquitectónico, de diseño, o simplemente una convención que ya no tiene sentido — proponer la mejora es válido y bienvenido: no asumas que hay que replicar lo existente solo porque "así está hecho". Para eso existe `KNOWLEDGE/`: para que las buenas prácticas sigan evolucionando misión a misión, no para congelar el estado actual.
+
 ---
 
 # Contexto del proyecto
